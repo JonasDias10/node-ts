@@ -45,7 +45,7 @@ type Query {
 
 type Review {
   content: String!
-  deletedAt: DateTimeISO!
+  deletedAt: DateTimeISO
   id: Int!
   product: Product!
 }

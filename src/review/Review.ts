@@ -18,7 +18,7 @@ export class Review extends BaseEntity {
   @JoinColumn({ name: "product_id" })
   product!: Product;
 
-  @Field(() => Date)
+  @Field(() => Date, { nullable: true })
   @DeleteDateColumn({ nullable: true, name: "deleted_at" })
   deletedAt?: Date;
 }

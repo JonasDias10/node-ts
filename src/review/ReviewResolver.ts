@@ -40,6 +40,12 @@ export class ReviewResolver {
       throw new Error("Review not found.");
     }
 
-    return Review.save({ ...review, ...input });
+    const product = await Product.findOne({ where: { id: input.productId } });
+
+    if (!product) {
+      throw new Error("Product not found.");
+    }
+
+    return Review.save({ ...review, ...input, product });
   }
 }
